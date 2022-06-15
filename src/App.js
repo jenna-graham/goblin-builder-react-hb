@@ -2,7 +2,7 @@ import './App.css';
 import GoblinForm from './GoblinForm';
 import GoblinList from './GoblinList';
 import Goblin from './Goblin';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
   /* 
@@ -22,7 +22,11 @@ function App() {
   const [allGoblins, setGoblins] = useState([]);
 
 
-  
+  useEffect(() => {
+    setVisibleGoblins(allGoblins);
+    setFilterString('');
+  }, [allGoblins]);
+
   function submitGoblin(e) {
     e.preventDefault();
     const newGoblin = {
