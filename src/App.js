@@ -35,7 +35,8 @@ function App() {
       color: goblinFormColor,
 
     };
-    setGoblins([...allGoblins, newGoblin]);
+    const updatedGoblins = [...allGoblins, newGoblin];
+    setGoblins(updatedGoblins);
     
     // on submit, make a new goblin object with a name that comes from the form state, an hp that comes from the form state, and a color that comes from the form state
 
